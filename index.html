@@ -9,7 +9,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
     --cream:    #FAF7F2;
     --cream2:   #F2EDE5;
@@ -23,666 +22,178 @@
     --rule:     #E0D8CF;
     --white:    #FFFFFF;
   }
-
   html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'Inter', sans-serif;
-    background: var(--cream);
-    color: var(--ink);
-    font-size: 16px;
-    line-height: 1.65;
-  }
-
-  /* ── UTILITY ── */
+  body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--ink); font-size: 16px; line-height: 1.65; }
   .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
-  .serif { font-family: 'Cormorant Garamond', serif; }
-  .terra { color: var(--terra); }
-  .sage  { color: var(--sage); }
 
   /* ── HERO ── */
-  .hero {
-    background: var(--ink);
-    color: var(--cream);
-    padding: 80px 24px 72px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -120px; right: -120px;
-    width: 480px; height: 480px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(196,120,90,0.18) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .hero-eyebrow {
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--terra);
-    margin-bottom: 28px;
-  }
-  .hero h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(44px, 8vw, 76px);
-    font-weight: 600;
-    line-height: 1.08;
-    color: var(--cream);
-    margin-bottom: 20px;
-  }
-  .hero h1 em {
-    font-style: italic;
-    color: var(--terra);
-  }
-  .hero-sub {
-    font-size: 17px;
-    font-weight: 300;
-    color: rgba(250,247,242,0.75);
-    max-width: 560px;
-    margin: 0 auto 40px;
-    line-height: 1.6;
-  }
-  .hero-promise {
-    display: inline-block;
-    background: var(--terra);
-    color: var(--white);
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 0.04em;
-    padding: 14px 36px;
-    border-radius: 2px;
-    text-decoration: none;
-    transition: background 0.2s;
-  }
-  .hero-promise:hover { background: #B06848; }
-  .hero-note {
-    margin-top: 16px;
-    font-size: 12px;
-    color: rgba(250,247,242,0.45);
-  }
+  .hero { background: var(--ink); color: var(--cream); padding: 80px 24px 72px; text-align: center; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: -120px; right: -120px; width: 480px; height: 480px; border-radius: 50%; background: radial-gradient(circle, rgba(196,120,90,0.18) 0%, transparent 70%); pointer-events: none; }
+  .hero-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--terra); margin-bottom: 28px; }
+  .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(40px, 7vw, 70px); font-weight: 600; line-height: 1.08; color: var(--cream); margin-bottom: 16px; }
+  .hero h1 em { font-style: italic; color: var(--terra); }
+  .hero-tagline { font-family: 'Cormorant Garamond', serif; font-size: clamp(16px, 2.5vw, 22px); font-style: italic; color: rgba(250,247,242,0.65); margin-bottom: 12px; }
+  .hero-sub { font-size: 16px; font-weight: 300; color: rgba(250,247,242,0.7); max-width: 540px; margin: 0 auto 40px; line-height: 1.6; }
+  .hero-cta { display: inline-block; background: var(--terra); color: var(--white); font-size: 14px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 16px 40px; text-decoration: none; transition: background 0.2s; }
+  .hero-cta:hover { background: #B06848; }
+  .hero-note { margin-top: 14px; font-size: 12px; color: rgba(250,247,242,0.38); }
 
-  /* ── SECTION BASE ── */
+  /* ── SECTIONS ── */
   section { padding: 72px 0; }
   section + section { border-top: 1px solid var(--rule); }
-
-  .section-label {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--terra);
-    margin-bottom: 16px;
-  }
-  .section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(32px, 5vw, 52px);
-    font-weight: 600;
-    line-height: 1.12;
-    margin-bottom: 32px;
-    color: var(--ink);
-  }
+  .section-label { font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terra); margin-bottom: 14px; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 5vw, 50px); font-weight: 600; line-height: 1.12; margin-bottom: 32px; color: var(--ink); }
   .section-title em { font-style: italic; color: var(--terra); }
 
   /* ── FOR WHOM ── */
-  .for-whom-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2px;
-    background: var(--rule);
-    border: 2px solid var(--rule);
-    margin-top: 8px;
-  }
-  .for-whom-card {
-    background: var(--cream);
-    padding: 28px 28px 28px 32px;
-    position: relative;
-  }
-  .for-whom-card::before {
-    content: '';
-    position: absolute;
-    left: 0; top: 20px; bottom: 20px;
-    width: 3px;
-    background: var(--terra);
-    opacity: 0;
-    transition: opacity 0.2s;
-  }
+  .for-whom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--rule); border: 2px solid var(--rule); margin-top: 8px; }
+  .for-whom-card { background: var(--cream); padding: 26px 26px 26px 30px; position: relative; transition: background 0.2s; }
+  .for-whom-card::before { content: ''; position: absolute; left: 0; top: 20px; bottom: 20px; width: 3px; background: var(--terra); opacity: 0; transition: opacity 0.2s; }
+  .for-whom-card:hover { background: #FDF9F5; }
   .for-whom-card:hover::before { opacity: 1; }
-  .for-whom-card strong {
-    display: block;
-    font-size: 15px;
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: var(--ink);
-  }
-  .for-whom-card p {
-    font-size: 14px;
-    color: var(--ink-soft);
-    line-height: 1.6;
-  }
+  .for-whom-card strong { display: block; font-size: 14px; font-weight: 600; margin-bottom: 7px; color: var(--ink); }
+  .for-whom-card p { font-size: 13px; color: var(--ink-soft); line-height: 1.6; }
 
   /* ── PAINS ── */
   .pains-bg { background: var(--cream2); }
-  .pain-list { display: grid; gap: 0; }
-  .pain-item {
-    display: grid;
-    grid-template-columns: 48px 1fr;
-    gap: 0 20px;
-    padding: 24px 0;
-    border-bottom: 1px solid var(--rule);
-    align-items: start;
-  }
+  .pain-item { display: grid; grid-template-columns: 44px 1fr; gap: 0 16px; padding: 22px 0; border-bottom: 1px solid var(--rule); align-items: start; }
   .pain-item:last-child { border-bottom: none; }
-  .pain-icon {
-    font-size: 22px;
-    padding-top: 2px;
-  }
-  .pain-q {
-    font-weight: 600;
-    font-size: 15px;
-    margin-bottom: 6px;
-    color: var(--ink);
-  }
-  .pain-a {
-    font-size: 14px;
-    color: var(--ink-soft);
-    line-height: 1.6;
-  }
+  .pain-icon { font-size: 20px; padding-top: 2px; }
+  .pain-q { font-weight: 600; font-size: 14px; margin-bottom: 5px; color: var(--ink); }
+  .pain-a { font-size: 13px; color: var(--ink-soft); line-height: 1.6; }
+
+  /* ── ONLINE ADVANTAGE ── */
+  .online-adv { background: var(--ink); color: var(--cream); padding: 48px; margin-top: 0; }
+  .online-adv h3 { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 600; margin-bottom: 20px; color: var(--cream); }
+  .online-adv h3 em { color: var(--terra); font-style: italic; }
+  .adv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .adv-item { display: flex; gap: 12px; align-items: flex-start; }
+  .adv-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--terra); margin-top: 8px; flex-shrink: 0; }
+  .adv-item p { font-size: 13px; color: rgba(250,247,242,0.8); line-height: 1.55; }
+  .adv-item strong { display: block; font-size: 13px; font-weight: 600; color: var(--cream); margin-bottom: 2px; }
 
   /* ── WHY YULIA ── */
-  .yulia-quote {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 26px;
-    font-style: italic;
-    font-weight: 500;
-    color: var(--ink);
-    line-height: 1.4;
-    border-left: 3px solid var(--terra);
-    padding-left: 24px;
-    margin-bottom: 48px;
-  }
-  .yulia-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 28px;
-  }
-  .yulia-fact {
-    display: flex;
-    gap: 14px;
-    align-items: flex-start;
-  }
-  .yulia-dot {
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    background: var(--terra);
-    margin-top: 7px;
-    flex-shrink: 0;
-  }
-  .yulia-fact strong { font-weight: 600; font-size: 14px; display: block; margin-bottom: 3px; }
-  .yulia-fact p { font-size: 13px; color: var(--ink-soft); line-height: 1.55; }
+  .yulia-quote { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-style: italic; font-weight: 500; color: var(--ink); line-height: 1.45; border-left: 3px solid var(--terra); padding-left: 22px; margin-bottom: 44px; }
+  .yulia-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .yulia-fact { display: flex; gap: 12px; align-items: flex-start; }
+  .yulia-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--terra); margin-top: 7px; flex-shrink: 0; }
+  .yulia-fact strong { font-weight: 600; font-size: 13px; display: block; margin-bottom: 3px; }
+  .yulia-fact p { font-size: 13px; color: var(--ink-soft); line-height: 1.5; }
 
   /* ── PROGRAMME ── */
   .programme-bg { background: var(--white); }
-  .module-track {
-    position: relative;
-    padding-left: 52px;
-  }
-  .module-track::before {
-    content: '';
-    position: absolute;
-    left: 19px; top: 12px; bottom: 12px;
-    width: 2px;
-    background: linear-gradient(to bottom, var(--terra) 0%, var(--sage) 100%);
-  }
-  .module {
-    position: relative;
-    margin-bottom: 0;
-  }
-  .module-dot {
-    position: absolute;
-    left: -40px;
-    top: 14px;
-    width: 14px; height: 14px;
-    border-radius: 50%;
-    background: var(--terra);
-    border: 2px solid var(--white);
-    box-shadow: 0 0 0 2px var(--terra);
-    transition: transform 0.2s;
-  }
-  .module:nth-child(3) .module-dot,
-  .module:nth-child(5) .module-dot { background: var(--gold); box-shadow: 0 0 0 2px var(--gold); }
-  .module:nth-child(7) .module-dot { background: var(--sage); box-shadow: 0 0 0 2px var(--sage); }
+  .prog-intro { font-size: 14px; color: var(--ink-soft); margin-bottom: 40px; max-width: 560px; }
+  .module-track { position: relative; padding-left: 50px; }
+  .module-track::before { content: ''; position: absolute; left: 18px; top: 14px; bottom: 14px; width: 2px; background: linear-gradient(to bottom, var(--terra) 0%, var(--sage) 100%); }
+  .module { position: relative; }
+  .module-dot { position: absolute; left: -38px; top: 16px; width: 12px; height: 12px; border-radius: 50%; background: var(--terra); border: 2px solid var(--white); box-shadow: 0 0 0 2px var(--terra); }
+  .module-dot.gold { background: var(--gold); box-shadow: 0 0 0 2px var(--gold); }
+  .module-dot.sage { background: var(--sage); box-shadow: 0 0 0 2px var(--sage); }
+  .module-header { padding: 22px 24px 0; cursor: pointer; display: flex; justify-content: space-between; align-items: flex-start; gap: 14px; user-select: none; }
+  .module-num { font-size: 10px; font-weight: 600; letter-spacing: 0.15em; color: var(--terra); text-transform: uppercase; margin-bottom: 3px; }
+  .module-title { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 600; color: var(--ink); line-height: 1.2; }
+  .module-sub { font-size: 12px; color: var(--ink-soft); font-style: italic; margin-top: 3px; }
+  .module-toggle { font-size: 20px; color: var(--terra); flex-shrink: 0; margin-top: 4px; }
+  .module-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+  .module-body.open { max-height: 700px; }
+  .module-inner { padding: 14px 24px 6px; }
+  .module-items { list-style: none; margin-bottom: 14px; }
+  .module-items li { font-size: 13px; color: var(--ink-soft); padding: 4px 0 4px 16px; position: relative; line-height: 1.5; }
+  .module-items li::before { content: '—'; position: absolute; left: 0; color: var(--terra); font-size: 11px; }
+  .result-box { background: var(--sage-lt); border-left: 3px solid var(--sage); padding: 14px 18px; margin-bottom: 22px; border-radius: 0 3px 3px 0; }
+  .result-label { font-size: 9px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--sage); margin-bottom: 5px; }
+  .result-text { font-size: 13px; color: #2A4A3A; line-height: 1.6; }
+  .module-sep { height: 1px; background: var(--rule); }
 
-  .module-header {
-    padding: 24px 28px 0;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 16px;
-  }
-  .module-num {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    color: var(--terra);
-    text-transform: uppercase;
-    margin-bottom: 4px;
-  }
-  .module-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 22px;
-    font-weight: 600;
-    color: var(--ink);
-    line-height: 1.2;
-  }
-  .module-toggle {
-    font-size: 20px;
-    color: var(--terra);
-    transition: transform 0.3s;
-    flex-shrink: 0;
-    margin-top: 4px;
-    user-select: none;
-  }
-  .module-body {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease, padding 0.3s;
-  }
-  .module-body.open { max-height: 600px; }
-  .module-inner {
-    padding: 16px 28px 4px;
-  }
-  .module-items {
-    list-style: none;
-    margin-bottom: 16px;
-  }
-  .module-items li {
-    font-size: 14px;
-    color: var(--ink-soft);
-    padding: 5px 0 5px 18px;
-    position: relative;
-    line-height: 1.5;
-  }
-  .module-items li::before {
-    content: '—';
-    position: absolute;
-    left: 0;
-    color: var(--terra);
-    font-size: 12px;
-  }
-  .result-box {
-    background: var(--sage-lt);
-    border-left: 3px solid var(--sage);
-    border-radius: 0 4px 4px 0;
-    padding: 16px 20px;
-    margin-bottom: 24px;
-  }
-  .result-label {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--sage);
-    margin-bottom: 6px;
-  }
-  .result-text {
-    font-size: 14px;
-    color: #2A4A3A;
-    line-height: 1.6;
-  }
-  .module-sep {
-    height: 1px;
-    background: var(--rule);
-    margin: 0 0 0 0;
-  }
+  /* ── CASE / PORTFOLIO ── */
+  .case-block { background: var(--ink); color: var(--cream); padding: 44px; margin-top: 44px; position: relative; overflow: hidden; }
+  .case-block::after { content: '"'; font-family: 'Cormorant Garamond', serif; font-size: 260px; position: absolute; right: -20px; top: -60px; color: rgba(196,120,90,0.1); line-height: 1; pointer-events: none; }
+  .case-text { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-style: italic; line-height: 1.55; margin-bottom: 14px; max-width: 540px; position: relative; }
+  .case-name { font-size: 11px; letter-spacing: 0.1em; color: var(--terra); text-transform: uppercase; margin-bottom: 20px; }
+  .case-more { font-size: 12px; color: rgba(250,247,242,0.45); font-style: italic; border-top: 1px solid rgba(250,247,242,0.1); padding-top: 16px; margin-top: 4px; }
 
-  /* ── CASE ── */
-  .case-block {
-    background: var(--ink);
-    color: var(--cream);
-    padding: 48px;
-    margin-top: 48px;
-    position: relative;
-    overflow: hidden;
-  }
-  .case-block::after {
-    content: '"';
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 280px;
-    position: absolute;
-    right: -20px; top: -60px;
-    color: rgba(196,120,90,0.12);
-    line-height: 1;
-    pointer-events: none;
-  }
-  .case-text {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 22px;
-    font-style: italic;
-    line-height: 1.5;
-    margin-bottom: 16px;
-    max-width: 560px;
-    position: relative;
-  }
-  .case-name {
-    font-size: 12px;
-    letter-spacing: 0.1em;
-    color: var(--terra);
-    text-transform: uppercase;
-  }
+  /* ── PORTFOLIO ── */
+  .portfolio-note { background: var(--terra-lt); border: 1px solid rgba(196,120,90,0.3); padding: 20px 24px; margin-top: 36px; }
+  .portfolio-note p { font-size: 13px; color: var(--ink-soft); line-height: 1.6; }
+  .portfolio-note strong { color: var(--terra); }
 
   /* ── PROMISE ── */
   .promise-bg { background: var(--terra-lt); }
-  .promise-list { list-style: none; display: grid; gap: 12px; }
-  .promise-list li {
-    display: flex;
-    gap: 14px;
-    align-items: flex-start;
-    font-size: 15px;
-    color: var(--ink);
-    line-height: 1.55;
-  }
-  .promise-list li::before {
-    content: '✓';
-    color: var(--sage);
-    font-weight: 700;
-    font-size: 16px;
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
-  .promise-main {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 22px;
-    font-style: italic;
-    color: var(--ink);
-    line-height: 1.5;
-    border-top: 1px solid var(--terra);
-    padding-top: 28px;
-    margin-top: 32px;
-  }
+  .promise-list { list-style: none; display: grid; gap: 11px; }
+  .promise-list li { display: flex; gap: 12px; align-items: flex-start; font-size: 14px; color: var(--ink); line-height: 1.55; }
+  .promise-list li::before { content: '✓'; color: var(--sage); font-weight: 700; font-size: 15px; flex-shrink: 0; margin-top: 1px; }
+  .promise-main { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-style: italic; color: var(--ink); line-height: 1.5; border-top: 1px solid rgba(196,120,90,0.4); padding-top: 26px; margin-top: 30px; }
 
   /* ── GUARANTEE ── */
-  .guarantee-inner {
-    display: flex;
-    gap: 32px;
-    align-items: flex-start;
-    background: var(--white);
-    border: 1px solid var(--rule);
-    padding: 36px 40px;
-  }
-  .guarantee-icon {
-    font-size: 48px;
-    flex-shrink: 0;
-    line-height: 1;
-  }
-  .guarantee-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 26px;
-    font-weight: 600;
-    margin-bottom: 10px;
-  }
-  .guarantee-text {
-    font-size: 15px;
-    color: var(--ink-soft);
-    line-height: 1.6;
-  }
+  .guarantee-inner { display: flex; gap: 28px; align-items: flex-start; background: var(--white); border: 1px solid var(--rule); padding: 32px 36px; }
+  .guarantee-icon { font-size: 44px; flex-shrink: 0; line-height: 1; }
+  .guarantee-title { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600; margin-bottom: 8px; }
+  .guarantee-text { font-size: 14px; color: var(--ink-soft); line-height: 1.6; }
 
   /* ── TARIFFS ── */
-  .tariffs-bg { background: var(--ink); color: var(--cream); }
+  .tariffs-bg { background: var(--ink); }
   .tariffs-bg .section-title { color: var(--cream); }
-  .tariff-row {
-    border: 1px solid rgba(250,247,242,0.12);
-    margin-bottom: 2px;
-    transition: border-color 0.2s;
-  }
-  .tariff-row:hover { border-color: rgba(196,120,90,0.5); }
+  .tariff-row { border: 1px solid rgba(250,247,242,0.1); margin-bottom: 2px; transition: border-color 0.2s; }
+  .tariff-row:hover { border-color: rgba(196,120,90,0.4); }
   .tariff-row.featured { border-color: var(--terra); }
-  .tariff-inner {
-    display: grid;
-    grid-template-columns: 200px 1fr auto;
-    gap: 0;
-    align-items: stretch;
-  }
-  .tariff-name-col {
-    padding: 28px 28px;
-    border-right: 1px solid rgba(250,247,242,0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .tariff-badge {
-    display: inline-block;
-    font-size: 9px;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--terra);
-    background: rgba(196,120,90,0.15);
-    padding: 3px 8px;
-    margin-bottom: 8px;
-    align-self: flex-start;
-  }
-  .tariff-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 28px;
-    font-weight: 600;
-    color: var(--cream);
-    line-height: 1;
-  }
-  .tariff-features-col {
-    padding: 28px 32px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px 24px;
-    align-content: center;
-  }
-  .tariff-feat {
-    font-size: 13px;
-    color: rgba(250,247,242,0.75);
-    display: flex;
-    align-items: center;
-    gap: 7px;
-  }
-  .tariff-feat::before {
-    content: '';
-    width: 5px; height: 5px;
-    border-radius: 50%;
-    background: var(--terra);
-    flex-shrink: 0;
-  }
-  .tariff-feat.bold-feat {
-    color: var(--cream);
-    font-weight: 500;
-  }
-  .tariff-price-col {
-    padding: 28px 28px;
-    border-left: 1px solid rgba(250,247,242,0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-    text-align: right;
-    min-width: 160px;
-  }
-  .tariff-old {
-    font-size: 13px;
-    color: rgba(250,247,242,0.35);
-    text-decoration: line-through;
-    margin-bottom: 4px;
-  }
-  .tariff-new {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 38px;
-    font-weight: 600;
-    color: var(--cream);
-    line-height: 1;
-    margin-bottom: 12px;
-  }
+  .tariff-inner { display: grid; grid-template-columns: 190px 1fr auto; align-items: stretch; }
+  .tariff-name-col { padding: 24px 24px; border-right: 1px solid rgba(250,247,242,0.08); display: flex; flex-direction: column; justify-content: center; }
+  .tariff-badge { display: inline-block; font-size: 9px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--terra); background: rgba(196,120,90,0.15); padding: 3px 7px; margin-bottom: 7px; align-self: flex-start; }
+  .tariff-name { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 600; color: var(--cream); line-height: 1; }
+  .tariff-features-col { padding: 24px 28px; display: flex; flex-wrap: wrap; gap: 7px 20px; align-content: center; }
+  .tariff-feat { font-size: 12px; color: rgba(250,247,242,0.7); display: flex; align-items: center; gap: 6px; }
+  .tariff-feat::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--terra); flex-shrink: 0; }
+  .tariff-feat.hi { color: var(--cream); font-weight: 500; }
+  .tariff-price-col { padding: 24px 24px; border-left: 1px solid rgba(250,247,242,0.08); display: flex; flex-direction: column; justify-content: center; align-items: flex-end; text-align: right; min-width: 150px; }
+  .tariff-old { font-size: 12px; color: rgba(250,247,242,0.3); text-decoration: line-through; margin-bottom: 3px; }
+  .tariff-new { font-family: 'Cormorant Garamond', serif; font-size: 34px; font-weight: 600; color: var(--cream); line-height: 1; margin-bottom: 12px; }
   .tariff-row.featured .tariff-new { color: var(--terra); }
-  .tariff-cta {
-    display: inline-block;
-    background: var(--terra);
-    color: var(--white);
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    padding: 10px 20px;
-    text-decoration: none;
-    white-space: nowrap;
-    transition: background 0.2s;
-  }
+  .tariff-cta { display: inline-block; background: var(--terra); color: var(--white); font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 9px 18px; text-decoration: none; white-space: nowrap; transition: background 0.2s; }
   .tariff-cta:hover { background: #B06848; }
-  .tariff-cta.outline {
-    background: transparent;
-    border: 1px solid rgba(250,247,242,0.3);
-    color: rgba(250,247,242,0.7);
-  }
+  .tariff-cta.outline { background: transparent; border: 1px solid rgba(250,247,242,0.25); color: rgba(250,247,242,0.65); }
   .tariff-cta.outline:hover { border-color: var(--terra); color: var(--terra); background: transparent; }
-  .tariff-deadline {
-    margin-top: 28px;
-    font-size: 13px;
-    color: rgba(250,247,242,0.5);
-    text-align: center;
-    letter-spacing: 0.04em;
-  }
+  .tariff-support-note { margin-top: 16px; font-size: 12px; color: rgba(250,247,242,0.38); text-align: center; font-style: italic; }
+  .tariff-deadline { margin-top: 24px; font-size: 13px; color: rgba(250,247,242,0.45); text-align: center; letter-spacing: 0.04em; }
   .tariff-deadline strong { color: var(--terra); }
 
   /* ── FAQ ── */
-  .faq-list { display: grid; gap: 0; }
-  .faq-item {
-    border-bottom: 1px solid var(--rule);
-  }
-  .faq-q {
-    padding: 20px 0;
-    font-weight: 600;
-    font-size: 15px;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-    user-select: none;
-  }
-  .faq-q span { color: var(--terra); font-size: 18px; transition: transform 0.3s; }
+  .faq-item { border-bottom: 1px solid var(--rule); }
+  .faq-q { padding: 18px 0; font-weight: 600; font-size: 14px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 14px; user-select: none; }
+  .faq-q span { color: var(--terra); font-size: 18px; transition: transform 0.3s; flex-shrink: 0; }
   .faq-q.open span { transform: rotate(45deg); }
-  .faq-a {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.35s ease;
-  }
-  .faq-a.open { max-height: 200px; }
-  .faq-a-inner {
-    font-size: 14px;
-    color: var(--ink-soft);
-    line-height: 1.65;
-    padding-bottom: 20px;
-  }
+  .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+  .faq-a.open { max-height: 220px; }
+  .faq-a-inner { font-size: 13px; color: var(--ink-soft); line-height: 1.65; padding-bottom: 18px; }
 
   /* ── CTA FINAL ── */
-  .cta-final {
-    background: var(--terra);
-    color: var(--white);
-    padding: 80px 24px;
-    text-align: center;
-  }
-  .cta-final h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(36px, 6vw, 58px);
-    font-weight: 600;
-    margin-bottom: 16px;
-    line-height: 1.1;
-  }
-  .cta-final p {
-    font-size: 16px;
-    opacity: 0.85;
-    margin-bottom: 40px;
-    max-width: 480px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .cta-big {
-    display: inline-block;
-    background: var(--white);
-    color: var(--terra);
-    font-size: 15px;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    padding: 18px 48px;
-    text-decoration: none;
-    transition: opacity 0.2s;
-  }
+  .cta-final { background: var(--terra); color: var(--white); padding: 80px 24px; text-align: center; }
+  .cta-final h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(34px, 6vw, 56px); font-weight: 600; margin-bottom: 14px; line-height: 1.1; }
+  .cta-final p { font-size: 15px; opacity: 0.85; margin-bottom: 36px; max-width: 460px; margin-left: auto; margin-right: auto; }
+  .cta-big { display: inline-block; background: var(--white); color: var(--terra); font-size: 14px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 16px 44px; text-decoration: none; transition: opacity 0.2s; }
   .cta-big:hover { opacity: 0.9; }
-  .cta-ig {
-    display: block;
-    margin-top: 20px;
-    font-size: 13px;
-    opacity: 0.6;
-    letter-spacing: 0.08em;
-  }
+  .cta-ig { display: block; margin-top: 18px; font-size: 12px; opacity: 0.55; letter-spacing: 0.08em; }
 
   /* ── FOOTER ── */
-  footer {
-    background: var(--ink);
-    color: rgba(250,247,242,0.4);
-    text-align: center;
-    padding: 32px 24px;
-    font-size: 12px;
-    letter-spacing: 0.06em;
-  }
+  footer { background: var(--ink); color: rgba(250,247,242,0.35); text-align: center; padding: 28px 24px; font-size: 11px; letter-spacing: 0.06em; }
 
-  /* ── STICKY CTA ── */
-  .sticky-bar {
-    position: fixed;
-    bottom: 0; left: 0; right: 0;
-    background: var(--ink);
-    padding: 12px 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-    z-index: 100;
-    transform: translateY(100%);
-    transition: transform 0.4s ease;
-    border-top: 2px solid var(--terra);
-  }
+  /* ── STICKY ── */
+  .sticky-bar { position: fixed; bottom: 0; left: 0; right: 0; background: var(--ink); padding: 11px 24px; display: flex; justify-content: space-between; align-items: center; gap: 14px; z-index: 100; transform: translateY(100%); transition: transform 0.4s ease; border-top: 2px solid var(--terra); }
   .sticky-bar.visible { transform: translateY(0); }
-  .sticky-text { font-size: 13px; color: rgba(250,247,242,0.7); }
-  .sticky-text strong { color: var(--cream); font-size: 14px; }
-  .sticky-cta {
-    background: var(--terra);
-    color: var(--white);
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    padding: 10px 24px;
-    text-decoration: none;
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
+  .sticky-text { font-size: 12px; color: rgba(250,247,242,0.6); }
+  .sticky-text strong { color: var(--cream); font-size: 13px; }
+  .sticky-cta { background: var(--terra); color: var(--white); font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 9px 22px; text-decoration: none; flex-shrink: 0; }
 
   /* ── RESPONSIVE ── */
   @media (max-width: 640px) {
-    .for-whom-grid { grid-template-columns: 1fr; }
-    .yulia-grid { grid-template-columns: 1fr; }
+    .for-whom-grid, .yulia-grid, .adv-grid { grid-template-columns: 1fr; }
     .tariff-inner { grid-template-columns: 1fr; }
     .tariff-name-col, .tariff-price-col { border: none; }
-    .tariff-price-col { border-top: 1px solid rgba(250,247,242,0.1); align-items: flex-start; text-align: left; }
-    .guarantee-inner { flex-direction: column; gap: 16px; padding: 28px 24px; }
-    .case-block { padding: 36px 28px; }
-    .module-track { padding-left: 40px; }
+    .tariff-price-col { border-top: 1px solid rgba(250,247,242,0.08); align-items: flex-start; text-align: left; }
+    .guarantee-inner { flex-direction: column; gap: 14px; padding: 24px 20px; }
+    .case-block { padding: 32px 24px; }
+    .module-track { padding-left: 36px; }
+    .online-adv { padding: 32px 24px; }
     .sticky-text { display: none; }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after { transition: none !important; }
   }
 </style>
 </head>
@@ -693,8 +204,9 @@
   <div class="container">
     <p class="hero-eyebrow">Онлайн-курс · Юлія Лозицька · @dr.lozytska_education</p>
     <h1>Хочу бути<br><em>косметологом</em></h1>
-    <p class="hero-sub">Вийди на дохід $1000+ у новій професії — з нуля, без медосвіти, з підтримкою практикуючого лікаря</p>
-    <a href="#tariffs" class="hero-promise">Хочу записатись</a>
+    <p class="hero-tagline">11 кроків до професії, яка дарує свободу, красу і можливість працювати для себе</p>
+    <p class="hero-sub">Вийдіть на дохід $1000+ у новій професії — з нуля, без медосвіти, з підтримкою практикуючого лікаря</p>
+    <a href="#tariffs" class="hero-cta">Хочу записатись</a>
     <p class="hero-note">Старт потоку — [дата] · Місць обмежено</p>
   </div>
 </section>
@@ -702,25 +214,32 @@
 <!-- ── ДЛЯ КОГО ── -->
 <section>
   <div class="container">
-    <p class="section-label">Це для тебе</p>
-    <h2 class="section-title">Ти кажеш собі <em>«хочу бути косметологом»</em> — і давно</h2>
-
+    <p class="section-label">Це для вас</p>
+    <h2 class="section-title">Ви кажете собі <em>«хочу бути косметологом»</em> — і давно</h2>
     <div class="for-whom-grid">
       <div class="for-whom-card">
         <strong>Хочу в косметологію з нуля</strong>
-        <p>Ніколи не працювала в цій сфері. Немає медосвіти. Не знаєш з чого починати — і відкладаєш вже давно.</p>
+        <p>Ніколи не працювали в цій сфері. Немає медосвіти. Не знаєте з чого починати — і відкладаєте вже давно.</p>
       </div>
       <div class="for-whom-card">
         <strong>Я майстер б'юті — хочу змін</strong>
-        <p>Манікюр, шугаринг, брови, масаж — ти вже в б'юті. Але стеля по доходу і хочеться більшого. Косметологія — наступний рівень.</p>
+        <p>Манікюр, шугаринг, брови, масаж — ви вже в б'юті. Але стеля по доходу і хочеться більшого. Косметологія — наступний рівень.</p>
+      </div>
+      <div class="for-whom-card">
+        <strong>Працюю в медицині — хочу змінити напрямок</strong>
+        <p>Медична освіта є, але хочеться іншого. Косметологія — це де медична база стає конкурентною перевагою і вищим чеком.</p>
       </div>
       <div class="for-whom-card">
         <strong>Починала, але без системи</strong>
-        <p>Пройшла якесь навчання, але відчуваєш невпевненість. Немає протоколів, немає розуміння «що далі».</p>
+        <p>Пройшли якесь навчання, але відчуваєте невпевненість. Немає протоколів, немає з ким порадитись і отримати підтримку наставника.</p>
       </div>
       <div class="for-whom-card">
         <strong>Я за кордоном — хочу нову справу</strong>
-        <p>Живеш в Польщі, Чехії, Німеччині чи деінде. Хочеш професію, яку можна будувати там. Курс — повністю онлайн.</p>
+        <p>Живете в Польщі, Чехії, Німеччині чи деінде. Хочете професію, яку можна будувати там. Курс — повністю онлайн.</p>
+      </div>
+      <div class="for-whom-card">
+        <strong>Хочу купити нову версію себе</strong>
+        <p>Не просто навчання — а старт нового розділу. Власний кабінет, улюблена справа, дохід і життя у своєму ритмі.</p>
       </div>
     </div>
   </div>
@@ -729,106 +248,119 @@
 <!-- ── БОЛІ ── -->
 <section class="pains-bg">
   <div class="container">
-    <p class="section-label">Ти напевно зараз думаєш</p>
-    <h2 class="section-title">Що тебе зупиняє</h2>
+    <p class="section-label">Ви напевно зараз думаєте</p>
+    <h2 class="section-title">Що вас зупиняє</h2>
+    <div class="pain-item">
+      <div class="pain-icon">🚫</div>
+      <div>
+        <p class="pain-q">Немає медосвіти — значить не можна?</p>
+        <p class="pain-a">Юлія сама починала як естетист — без ін'єкцій, без диплому лікаря. 5 років заробляла добре тільки на неін'єкційних процедурах. Більшість успішних естетистів — без медосвіти.</p>
+      </div>
+    </div>
+    <div class="pain-item">
+      <div class="pain-icon">😰</div>
+      <div>
+        <p class="pain-q">Де брати клієнтів — незрозуміло</p>
+        <p class="pain-a">Це найбільший страх у всіх початківців. Саме тому в курсі є окремий модуль: перші клієнти без платної реклами. Катя знайшла перших клієнтів в перший місяць після старту.</p>
+      </div>
+    </div>
+    <div class="pain-item">
+      <div class="pain-icon">⚠️</div>
+      <div>
+        <p class="pain-q">Боюся нашкодити клієнту</p>
+        <p class="pain-a">Правильно боїтесь. Тому курс будується на принципі «безпека перш за все». Юлія — лікар. Вона не вчить тому, що небезпечно без медичного контролю.</p>
+      </div>
+    </div>
+    <div class="pain-item">
+      <div class="pain-icon">🤷</div>
+      <div>
+        <p class="pain-q">Немає з ким порадитись і отримати допомогу наставника</p>
+        <p class="pain-a">Саме тому на всіх тарифах є підтримка. Ви не залишаєтесь наодинці з питаннями — Юлія і команда відповідають на реальні ситуації з практики.</p>
+      </div>
+    </div>
+    <div class="pain-item">
+      <div class="pain-icon">🤯</div>
+      <div>
+        <p class="pain-q">Постачальники, бренди косметики — повний хаос</p>
+        <p class="pain-a">Юлія дає особисту базу перевірених постачальників. Ізраїльські та українські бренди, оптові ціни, що обирати під який тип шкіри. Не треба шукати самій.</p>
+      </div>
+    </div>
+    <div class="pain-item">
+      <div class="pain-icon">💸</div>
+      <div>
+        <p class="pain-q">Знову витрачу гроші і нічого не буде</p>
+        <p class="pain-a">Гарантія після першого модуля — повернення 100% без зайвих питань. Ми впевнені в результаті — тому нам не страшно це пропонувати.</p>
+      </div>
+    </div>
 
-    <div class="pain-list">
-      <div class="pain-item">
-        <div class="pain-icon">🚫</div>
-        <div>
-          <p class="pain-q">Немає медосвіти — значить не можна?</p>
-          <p class="pain-a">Юлія сама починала як естетист — без ін'єкцій, без диплому лікаря. 5 років заробляла добре тільки на неін'єкційних процедурах. 90% успішних естетистів — без медосвіти.</p>
+    <!-- ОНЛАЙН ПЕРЕВАГИ -->
+    <div class="online-adv" style="margin-top:44px;">
+      <h3>Онлайн — це <em>краще</em>, ніж офлайн у конкурентів</h3>
+      <div class="adv-grid">
+        <div class="adv-item">
+          <div class="adv-dot"></div>
+          <div>
+            <strong>Відеолекції з відчуттям присутності</strong>
+            <p>Не просто записані слайди — майстер-класи, де ви бачите кожен рух рук і чуєте пояснення в моменті.</p>
+          </div>
         </div>
-      </div>
-      <div class="pain-item">
-        <div class="pain-icon">😰</div>
-        <div>
-          <p class="pain-q">Де брати клієнтів — незрозуміло</p>
-          <p class="pain-a">Це найбільший страх у всіх початківців. Саме тому в курсі є окремий модуль: перші клієнти без платної реклами. Катя знайшла перших клієнтів в перший місяць після старту.</p>
+        <div class="adv-item">
+          <div class="adv-dot"></div>
+          <div>
+            <strong>Підтримка на всіх тарифах</strong>
+            <p>Виникло питання під час роботи з клієнтом — пишете і отримуєте відповідь. Не після курсу, а весь час.</p>
+          </div>
         </div>
-      </div>
-      <div class="pain-item">
-        <div class="pain-icon">⚠️</div>
-        <div>
-          <p class="pain-q">Боюся нашкодити клієнту</p>
-          <p class="pain-a">Правильно боїшся. Тому курс будується на принципі «безпека перш за все». Юлія — лікар. Вона не вчить тому, що небезпечно без медичного контролю.</p>
+        <div class="adv-item">
+          <div class="adv-dot"></div>
+          <div>
+            <strong>Переглядайте скільки завгодно</strong>
+            <p>Матеріали у вас назавжди. Забули — переглянули. Так засвоюється краще, ніж один раз офлайн.</p>
+          </div>
         </div>
-      </div>
-      <div class="pain-item">
-        <div class="pain-icon">🤯</div>
-        <div>
-          <p class="pain-q">Постачальники, бренди косметики — повний хаос</p>
-          <p class="pain-a">Юлія дає особисту базу перевірених постачальників. Ізраїльські та українські бренди, оптові ціни, що обирати під який тип шкіри. Не треба шукати самій.</p>
-        </div>
-      </div>
-      <div class="pain-item">
-        <div class="pain-icon">💸</div>
-        <div>
-          <p class="pain-q">Знову витрачу гроші і нічого не буде</p>
-          <p class="pain-a">Гарантія після першого модуля — повернення 100%. Ми впевнені в результаті. Тому нам не страшно це пропонувати.</p>
-        </div>
-      </div>
-      <div class="pain-item">
-        <div class="pain-icon">🗂️</div>
-        <div>
-          <p class="pain-q">Не знаю як організувати кабінет або роботу вдома</p>
-          <p class="pain-a">Модуль 3 — повністю про це. Мінімальний старт від 9 м². Що реально потрібно і без чого можна обійтись. Досвід учениць, які починали вдома.</p>
+        <div class="adv-item">
+          <div class="adv-dot"></div>
+          <div>
+            <strong>Без прив'язки до міста</strong>
+            <p>Навчаєтесь звідки завгодно — Київ, Польща, Варшава, Берлін. Офлайн-практика — для тих, хто хоче.</p>
+          </div>
         </div>
       </div>
     </div>
+
   </div>
 </section>
 
 <!-- ── ЧОМУ ЮЛЯ ── -->
 <section>
   <div class="container">
-    <p class="section-label">Твій наставник</p>
+    <p class="section-label">Ваш наставник</p>
     <h2 class="section-title">Юлія Лозицька</h2>
-
-    <p class="yulia-quote">«Я навчаю не тільки рукам — я навчаю думати як лікар.»</p>
-
+    <p class="yulia-quote">«Я навчаю не лише працювати руками в моменті — а й мислити комплексно, будувати стратегію ведення клієнта на роки.»</p>
     <div class="yulia-grid">
       <div class="yulia-fact">
         <div class="yulia-dot"></div>
-        <div>
-          <strong>Лікар-терапевт за освітою</strong>
-          <p>Медична база — це безпека для клієнта і впевненість для тебе як майстра.</p>
-        </div>
+        <div><strong>Лікар-терапевт за освітою</strong><p>Медична база — це безпека для клієнта і впевненість для вас як майстра.</p></div>
       </div>
       <div class="yulia-fact">
         <div class="yulia-dot"></div>
-        <div>
-          <strong>26+ років практики</strong>
-          <p>Ін'єкційні та неін'єкційні методики. Клієнти в черзі на 2 тижні вперед. Не теорія — реальна практика.</p>
-        </div>
+        <div><strong>26+ років практики</strong><p>Ін'єкційні та неін'єкційні методики. Клієнти в черзі на 2 тижні вперед. Не теорія — жива практика.</p></div>
       </div>
       <div class="yulia-fact">
         <div class="yulia-dot"></div>
-        <div>
-          <strong>100+ навчань пройдено</strong>
-          <p>Постійно вчиться сама — і дає тільки те, що перевірено на власних клієнтах.</p>
-        </div>
+        <div><strong>100+ навчань пройдено</strong><p>Постійно вчиться сама — і дає тільки те, що перевірено на власних клієнтах.</p></div>
       </div>
       <div class="yulia-fact">
         <div class="yulia-dot"></div>
-        <div>
-          <strong>Викладає у 3 країнах</strong>
-          <p>Греція, Кіпр, Польща, Україна. Знає як працює косметологія в різних правових системах.</p>
-        </div>
+        <div><strong>Викладає по всьому світу</strong><p>Кіпр, Польща, Греція, Україна. Знає тонкощі роботи в різних умовах.</p></div>
       </div>
       <div class="yulia-fact">
         <div class="yulia-dot"></div>
-        <div>
-          <strong>Сама починала як естетист</strong>
-          <p>Без ін'єкцій. Без медичного кабінету. Знає цей шлях зсередини — не з книжок.</p>
-        </div>
+        <div><strong>Сама починала як естетист</strong><p>Без ін'єкцій. Без медичного кабінету. Знає цей шлях зсередини.</p></div>
       </div>
       <div class="yulia-fact">
         <div class="yulia-dot"></div>
-        <div>
-          <strong>Жива підтримка після курсу</strong>
-          <p>Не кидає після останнього уроку. Відповідає на реальні питання з практики.</p>
-        </div>
+        <div><strong>Індивідуальна підтримка</strong><p>Не кидає після останнього уроку. Відповідає на реальні питання з практики.</p></div>
       </div>
     </div>
   </div>
@@ -838,8 +370,8 @@
 <section class="programme-bg">
   <div class="container">
     <p class="section-label">Програма</p>
-    <h2 class="section-title">6 модулів — від нуля<br>до першого доходу</h2>
-    <p style="font-size:14px; color:var(--ink-soft); margin-bottom:40px;">Після кожного модуля — конкретний результат. Не «знання» — а те, що ти вмієш і маєш.</p>
+    <h2 class="section-title">10 модулів + бонус —<br>від мрії до першого доходу</h2>
+    <p class="prog-intro">Після кожного модуля — конкретний результат. Не «знання» — а те, що ви вмієте і маєте.</p>
 
     <div class="module-track">
 
@@ -849,21 +381,24 @@
         <div class="module-header" onclick="toggleModule(this)">
           <div>
             <p class="module-num">Модуль 01</p>
-            <p class="module-title">Старт: як влаштована ніша</p>
+            <p class="module-title">Закохатися в професію косметолога</p>
+            <p class="module-sub">Від мрії до власного красивого простору</p>
           </div>
           <span class="module-toggle">+</span>
         </div>
         <div class="module-body">
           <div class="module-inner">
             <ul class="module-items">
-              <li>Аналіз ринку — що потрібно клієнтам у твоєму місті або країні</li>
-              <li>Як обирати послуги під попит, а не під себе</li>
-              <li>Юридичні питання естетиста: що можна без медосвіти</li>
-              <li>Перші кроки навіть без грошей і кабінету</li>
+              <li>Хто такий сучасний косметолог і чому ця професія сьогодні одна з найжіночніших і найзатребуваніших</li>
+              <li>Яким може бути ваше майбутнє робоче місце: естетика, атмосфера і стиль</li>
+              <li>Як створити кабінет, в який закохуються клієнти</li>
+              <li>Обладнання, професійний одяг і все, що формує образ експерта</li>
+              <li>Безпека, стерильність і професійна відповідальність</li>
+              <li>Базові навички першої допомоги</li>
             </ul>
             <div class="result-box">
               <p class="result-label">Результат модуля</p>
-              <p class="result-text">Ти розумієш, яку нішу обрати і з чого почати вже завтра — без хаосу і зайвих витрат.</p>
+              <p class="result-text">Ви бачите свою професію і свій простір. Розумієте, що саме на вас чекає — і хочете цього ще більше.</p>
             </div>
           </div>
         </div>
@@ -876,22 +411,22 @@
         <div class="module-header" onclick="toggleModule(this)">
           <div>
             <p class="module-num">Модуль 02</p>
-            <p class="module-title">Базові процедури і протоколи</p>
+            <p class="module-title">Анатомія без складних підручників</p>
+            <p class="module-sub">Знання, які відрізняють професіонала від любителя</p>
           </div>
           <span class="module-toggle">+</span>
         </div>
         <div class="module-body">
           <div class="module-inner">
             <ul class="module-items">
-              <li>Різні види чисток — безпечні техніки, після яких клієнти повертаються</li>
-              <li>Пілінги хімічні та ензимні: підбір під тип шкіри</li>
-              <li>Карбокситерапія і ферментотерапія</li>
-              <li>Маски: показання, протоколи, поєднання</li>
-              <li>Принцип «не нашкодь» — безпека як основа репутації</li>
+              <li>Як влаштована шкіра і чому вона старіє</li>
+              <li>Анатомія обличчя простими словами</li>
+              <li>М'язи, жирові пакети, судини і лімфатична система</li>
+              <li>Небезпечні зони, які повинен знати кожен косметолог</li>
             </ul>
             <div class="result-box">
               <p class="result-label">Результат модуля</p>
-              <p class="result-text">Ти знаєш базові процедури і вмієш скласти протокол під конкретного клієнта. Є чіткий алгоритм — що робити, в якій послідовності, чому саме так.</p>
+              <p class="result-text">Ви розмовляєте мовою тіла, а не здогадок. Розумієте, що відбувається під шкірою — і чому одна процедура дає результат, а інша ні.</p>
             </div>
           </div>
         </div>
@@ -900,25 +435,27 @@
 
       <!-- М3 -->
       <div class="module">
-        <div class="module-dot"></div>
+        <div class="module-dot gold"></div>
         <div class="module-header" onclick="toggleModule(this)">
           <div>
             <p class="module-num">Модуль 03</p>
-            <p class="module-title">Організація робочого місця</p>
+            <p class="module-title">Навчитися «читати» шкіру як книгу</p>
+            <p class="module-sub">Стати експертом, якому довіряють</p>
           </div>
           <span class="module-toggle">+</span>
         </div>
         <div class="module-body">
           <div class="module-inner">
             <ul class="module-items">
-              <li>Мінімальний старт від 9 м² — що реально потрібно</li>
-              <li>Обладнання: кушетка, стерилізатори, кварцова лампа</li>
-              <li>Обробка інструментів і поверхонь — стандарти безпеки</li>
-              <li>Як стартувати вдома — досвід учениць Юлії</li>
+              <li>Типи і стани шкіри</li>
+              <li>Акне, розацеа, пігментація, чутливість</li>
+              <li>Як відрізнити норму від патології</li>
+              <li>Новоутворення шкіри і коли потрібно направити клієнта до лікаря</li>
+              <li>Найчастіші проблеми, з якими приходять клієнти</li>
             </ul>
             <div class="result-box">
               <p class="result-label">Результат модуля</p>
-              <p class="result-text">Ти знаєш як організувати робоче місце з мінімальним бюджетом. Є чіткий список — без чого не обійтись і що можна відкласти на потім.</p>
+              <p class="result-text">Ви дивитесь на обличчя клієнта і розумієте, що з ним відбувається. Не угадуєте — бачите. Це основа впевненості і довіри.</p>
             </div>
           </div>
         </div>
@@ -927,26 +464,28 @@
 
       <!-- М4 -->
       <div class="module">
-        <div class="module-dot"></div>
+        <div class="module-dot gold"></div>
         <div class="module-header" onclick="toggleModule(this)">
           <div>
             <p class="module-num">Модуль 04</p>
-            <p class="module-title">Косметика і постачальники</p>
+            <p class="module-title">Anti-age філософія молодості</p>
+            <p class="module-sub">Як допомагати жінкам залишатися красивими в будь-якому віці</p>
           </div>
           <span class="module-toggle">+</span>
         </div>
         <div class="module-body">
           <div class="module-inner">
             <ul class="module-items">
-              <li>Як відрізнити якість від підробки</li>
-              <li>Особиста база перевірених постачальників від Юлії (ізраїльські, українські бренди)</li>
-              <li>Оптові ціни і як їх отримати</li>
-              <li>Підбір космецевтики під тип шкіри і стан</li>
-              <li>Як підібрати домашній догляд клієнту — і чому це підвищує твій чек</li>
+              <li>Чому старіє шкіра</li>
+              <li>Вплив стресу, харчування і способу життя</li>
+              <li>Гормони і молодість</li>
+              <li>Типи старіння</li>
+              <li>Фотостаріння і сучасний захист шкіри</li>
+              <li>Як складати антивікові програми догляду</li>
             </ul>
             <div class="result-box">
               <p class="result-label">Результат модуля</p>
-              <p class="result-text">Ти отримуєш перевірену базу постачальників і знаєш, що саме купувати для старту. Не витрачаєш гроші на те, що не працює.</p>
+              <p class="result-text">Ви думаєте не процедурами, а програмами. Знаєте як зупинити старіння шкіри — і вмієте пояснити це клієнту так, щоб він повертався роками.</p>
             </div>
           </div>
         </div>
@@ -959,48 +498,206 @@
         <div class="module-header" onclick="toggleModule(this)">
           <div>
             <p class="module-num">Модуль 05</p>
-            <p class="module-title">Перші клієнти і сервіс</p>
+            <p class="module-title">Мистецтво персонального підходу</p>
+            <p class="module-sub">Як бачити більше, ніж просто шкіру</p>
           </div>
           <span class="module-toggle">+</span>
         </div>
         <div class="module-body">
           <div class="module-inner">
             <ul class="module-items">
-              <li>Як знайти перших клієнтів без реклами: сарафан, знайомі, Instagram</li>
-              <li>Сервіс, після якого повертаються — конкретні техніки</li>
-              <li>Як виставляти ціни і поступово підвищувати чек</li>
-              <li>Карта процедур клієнта — як будувати довгострокові відносини</li>
+              <li>Візуальна діагностика</li>
+              <li>Аналіз способу життя клієнта</li>
+              <li>Як складати індивідуальні програми догляду</li>
+              <li>Фотофіксація результатів</li>
+              <li>Комплексний підхід, завдяки якому клієнти залишаються з вами роками</li>
             </ul>
             <div class="result-box">
               <p class="result-label">Результат модуля</p>
-              <p class="result-text">Ти знаєш де і як шукати перших клієнтів без платної реклами. Є алгоритм — а не сподівання на «самі прийдуть».</p>
+              <p class="result-text">Ви будуєте не разові процедури, а стратегію для кожного клієнта. Саме це перетворює новачка на майстра, якого рекомендують подругам.</p>
             </div>
           </div>
         </div>
         <div class="module-sep"></div>
       </div>
 
-      <!-- М6 БОНУС -->
+      <!-- М6 -->
       <div class="module">
-        <div class="module-dot" style="background:var(--sage); box-shadow: 0 0 0 2px var(--sage);"></div>
+        <div class="module-dot"></div>
         <div class="module-header" onclick="toggleModule(this)">
           <div>
-            <p class="module-num" style="color:var(--sage);">Бонусний модуль</p>
-            <p class="module-title">Просування в Instagram</p>
+            <p class="module-num">Модуль 06</p>
+            <p class="module-title">Косметика, яку ви рекомендуватимете з впевненістю</p>
+            <p class="module-sub">Перестати губитися серед баночок і почати розуміти склади</p>
           </div>
           <span class="module-toggle">+</span>
         </div>
         <div class="module-body">
           <div class="module-inner">
             <ul class="module-items">
-              <li>Що публікувати, щоб клієнти приходили самі</li>
-              <li>До/після — як правильно знімати і публікувати</li>
-              <li>Хайлайти, актуальні, прайс — мінімальний пакет сторінки</li>
-              <li>Коли і як запускати рекламу</li>
+              <li>Активні компоненти, які дійсно працюють</li>
+              <li>Кислоти, вітаміни, пептиди та ферменти</li>
+              <li>Як читати склад косметики</li>
+              <li>Домашній догляд без зайвих витрат</li>
+              <li>Професійні бренди та перевірені постачальники (база від Юлії)</li>
+              <li>Як купувати продукцію за оптовими цінами</li>
+              <li>Як грамотно поєднувати домашній і професійний догляд</li>
             </ul>
             <div class="result-box">
               <p class="result-label">Результат модуля</p>
-              <p class="result-text">Ти маєш упаковану Instagram-сторінку, готову до залучення клієнтів. Не ідеальну — а робочу, після якої клієнти пишуть і записуються.</p>
+              <p class="result-text">Ви отримуєте особисту базу постачальників і знаєте, що купувати для старту. Більше не губитесь — і впевнено рекомендуєте клієнтам.</p>
+            </div>
+          </div>
+        </div>
+        <div class="module-sep"></div>
+      </div>
+
+      <!-- М7 -->
+      <div class="module">
+        <div class="module-dot gold"></div>
+        <div class="module-header" onclick="toggleModule(this)">
+          <div>
+            <p class="module-num">Модуль 07</p>
+            <p class="module-title">Процедури, з яких починається шлях косметолога</p>
+            <p class="module-sub">Від першого очищення до комплексних програм догляду</p>
+          </div>
+          <span class="module-toggle">+</span>
+        </div>
+        <div class="module-body">
+          <div class="module-inner">
+            <ul class="module-items">
+              <li>Чистки обличчя</li>
+              <li>Масажі обличчя</li>
+              <li>Маски і концентрати</li>
+              <li>Хімічні та ензимні пілінги</li>
+              <li>Карбокситерапія</li>
+              <li>Ферментотерапія</li>
+              <li>Мікронідлінг</li>
+              <li>Готові протоколи процедур для різних запитів клієнтів</li>
+            </ul>
+            <div class="result-box">
+              <p class="result-label">Результат модуля</p>
+              <p class="result-text">Ви знаєте базові процедури і маєте готові протоколи. Є чіткий алгоритм — що робити, в якій послідовності, під який запит клієнта.</p>
+            </div>
+          </div>
+        </div>
+        <div class="module-sep"></div>
+      </div>
+
+      <!-- М8 -->
+      <div class="module">
+        <div class="module-dot"></div>
+        <div class="module-header" onclick="toggleModule(this)">
+          <div>
+            <p class="module-num">Модуль 08</p>
+            <p class="module-title">Апаратна косметологія</p>
+            <p class="module-sub">Сучасні технології, які підсилюють результати</p>
+          </div>
+          <span class="module-toggle">+</span>
+        </div>
+        <div class="module-body">
+          <div class="module-inner">
+            <ul class="module-items">
+              <li>Ультразвук</li>
+              <li>Дарсонваль</li>
+              <li>Фонофорез</li>
+              <li>Мікроструми</li>
+              <li>Низькотемпературна плазма</li>
+              <li>Кріоліфтинг</li>
+              <li>Радіохвильовий ліфтинг</li>
+              <li>Схеми процедур для різних типів шкіри</li>
+            </ul>
+            <div class="result-box">
+              <p class="result-label">Результат модуля</p>
+              <p class="result-text">Ви знаєте апаратні методики і вмієте підібрати апарат під результат, а не навпаки. Це підвищує ваш чек і виокремлює серед конкурентів.</p>
+            </div>
+          </div>
+        </div>
+        <div class="module-sep"></div>
+      </div>
+
+      <!-- М9 -->
+      <div class="module">
+        <div class="module-dot gold"></div>
+        <div class="module-header" onclick="toggleModule(this)">
+          <div>
+            <p class="module-num">Модуль 09</p>
+            <p class="module-title">Світ ін'єкційної косметології</p>
+            <p class="module-sub">Зрозуміти найпопулярніші процедури і впевнено спілкуватися з клієнтами</p>
+          </div>
+          <span class="module-toggle">+</span>
+        </div>
+        <div class="module-body">
+          <div class="module-inner">
+            <ul class="module-items">
+              <li>Біоревіталізація</li>
+              <li>Мезотерапія</li>
+              <li>PRP-терапія</li>
+              <li>Стерильність і безпека</li>
+              <li>Ускладнення і профілактика</li>
+              <li>Межі компетенції косметолога</li>
+            </ul>
+            <div class="result-box">
+              <p class="result-label">Результат модуля</p>
+              <p class="result-text">Ви розумієте ін'єкційний світ зсередини — і впевнено відповідаєте на запитання клієнтів, навіть якщо самі ще не колете. Це рівень довіри і авторитету.</p>
+            </div>
+          </div>
+        </div>
+        <div class="module-sep"></div>
+      </div>
+
+      <!-- М10 -->
+      <div class="module">
+        <div class="module-dot sage"></div>
+        <div class="module-header" onclick="toggleModule(this)">
+          <div>
+            <p class="module-num">Модуль 10</p>
+            <p class="module-title">Перші клієнти і перший дохід</p>
+            <p class="module-sub">Як перетворити знання на улюблену справу</p>
+          </div>
+          <span class="module-toggle">+</span>
+        </div>
+        <div class="module-body">
+          <div class="module-inner">
+            <ul class="module-items">
+              <li>Де знайти перших клієнтів без реклами</li>
+              <li>Як створити сервіс, після якого рекомендують подругам</li>
+              <li>Як формувати прайс і підвищувати чек</li>
+              <li>Як перетворити разового клієнта на постійного</li>
+              <li>Побудова довгострокових відносин і стабільного доходу</li>
+            </ul>
+            <div class="result-box">
+              <p class="result-label">Результат модуля</p>
+              <p class="result-text">Ви знаєте де і як шукати перших клієнтів без платної реклами. Є алгоритм — а не сподівання «самі прийдуть». $1000+ на горизонті 2–3 місяців після старту.</p>
+            </div>
+          </div>
+        </div>
+        <div class="module-sep"></div>
+      </div>
+
+      <!-- БОНУС -->
+      <div class="module">
+        <div class="module-dot sage"></div>
+        <div class="module-header" onclick="toggleModule(this)">
+          <div>
+            <p class="module-num" style="color:var(--sage);">🎁 Бонусний модуль</p>
+            <p class="module-title">Instagram косметолога</p>
+            <p class="module-sub">Як зробити так, щоб клієнти знаходили вас самі</p>
+          </div>
+          <span class="module-toggle">+</span>
+        </div>
+        <div class="module-body">
+          <div class="module-inner">
+            <ul class="module-items">
+              <li>Контент, який продає без нав'язування</li>
+              <li>Красиві фото «до/після»</li>
+              <li>Оформлення сторінки експерта</li>
+              <li>Сторіс, хайлайти і прайс</li>
+              <li>Перші кроки в рекламі</li>
+            </ul>
+            <div class="result-box">
+              <p class="result-label">Результат модуля</p>
+              <p class="result-text">Ваша Instagram-сторінка — не просто красива. Вона працює: клієнти пишуть, записуються і рекомендують вас далі.</p>
             </div>
           </div>
         </div>
@@ -1008,10 +705,16 @@
 
     </div><!-- /module-track -->
 
-    <!-- КЕЙС -->
+    <!-- КЕЙСИ -->
     <div class="case-block">
       <p class="case-text">«Катя прийшла до мене без досвіду. Без медосвіти. Зі страхом помилитись. Через 3 місяці — постійні клієнти і $1000 доходу на місяць.»</p>
       <p class="case-name">— Юлія Лозицька про свою ученицю</p>
+      <p class="case-more">[Тут — додаткові кейси учениць: ім'я, ситуація до, результат у цифрах]</p>
+    </div>
+
+    <!-- ПОРТФОЛІО -->
+    <div class="portfolio-note">
+      <p><strong>Портфоліо прямо під час навчання.</strong> Вже з перших занять ви знімаєте роботи до/після — і заповнюєте Instagram-профіль реальними кейсами ще до виходу на перших клієнтів. Це не просто навчання — це старт репутації.</p>
     </div>
 
   </div>
@@ -1020,21 +723,21 @@
 <!-- ── ОБІЦЯНКА ── -->
 <section class="promise-bg">
   <div class="container">
-    <p class="section-label">Що ти отримаєш</p>
+    <p class="section-label">Що ви отримаєте</p>
     <h2 class="section-title">Після курсу — нова професія<br>і перший дохід</h2>
-
     <ul class="promise-list">
-      <li>Нова професія — ти готова приймати перших клієнтів</li>
-      <li>Чітка система роботи від першого дзвінка до карти процедур</li>
-      <li>База перевірених постачальників косметики — не треба шукати самій</li>
-      <li>Протоколи під різні типи шкіри і запити клієнтів</li>
+      <li>Розуміння шкіри і сучасних методик догляду</li>
+      <li>Навички проведення найзатребуваніших процедур</li>
+      <li>Готові протоколи роботи під різні типи шкіри</li>
+      <li>База постачальників і професійних брендів</li>
       <li>Алгоритм пошуку перших клієнтів без платної реклами</li>
-      <li>Упакована Instagram-сторінка для старту</li>
-      <li>Впевненість і безпека — не страх зробити щось не так</li>
+      <li>Упакована Instagram-сторінка з першими портфоліо-кейсами</li>
+      <li>Впевненість у собі та своїх знаннях</li>
+      <li>Можливість почати працювати і заробляти в красивій жіночій професії</li>
+      <li>Шлях до власного кабінету, улюбленої справи і життя у своєму ритмі</li>
       <li>$1000+ — реальна ціль на горизонті 2–3 місяців після старту</li>
     </ul>
-
-    <p class="promise-main">«Після цього курсу ти матимеш не просто знання — ти матимеш систему. Ти виходиш не з дипломом — а з готовністю заробляти.»</p>
+    <p class="promise-main">«Після цього курсу ви матимете не просто знання — ви матимете систему. Виходите не з дипломом — а з готовністю заробляти.»</p>
   </div>
 </section>
 
@@ -1047,7 +750,7 @@
       <div class="guarantee-icon">🛡️</div>
       <div>
         <p class="guarantee-title">Повернення 100% після першого модуля</p>
-        <p class="guarantee-text">Якщо після першого модуля ти розумієш, що курс — не для тебе, ми повертаємо повну суму оплати без зайвих питань. Ми впевнені в результаті. Тому нам не страшно це гарантувати.</p>
+        <p class="guarantee-text">Якщо після першого модуля ви розумієте, що курс — не для вас, ми повертаємо повну суму оплати без зайвих питань. Ми впевнені в результаті. Тому нам не страшно це гарантувати.</p>
       </div>
     </div>
   </div>
@@ -1057,30 +760,28 @@
 <section class="tariffs-bg" id="tariffs">
   <div class="container">
     <p class="section-label" style="color:var(--terra);">Тарифи та ціни</p>
-    <h2 class="section-title" style="color:var(--cream);">Обери свій формат</h2>
+    <h2 class="section-title">Оберіть свій формат</h2>
 
-    <!-- СТАРТ -->
     <div class="tariff-row">
       <div class="tariff-inner">
         <div class="tariff-name-col">
           <p class="tariff-name">Старт</p>
         </div>
         <div class="tariff-features-col">
-          <span class="tariff-feat">Модулі 1–6 у записі</span>
+          <span class="tariff-feat">10 модулів + бонус у записі</span>
           <span class="tariff-feat">Доступ 6 місяців</span>
           <span class="tariff-feat">База постачальників</span>
+          <span class="tariff-feat">Підтримка в чаті</span>
           <span class="tariff-feat">Повністю онлайн</span>
-          <span class="tariff-feat">Свій темп</span>
         </div>
         <div class="tariff-price-col">
-          <p class="tariff-old">250€</p>
+          <p class="tariff-old">300€</p>
           <p class="tariff-new">149€</p>
           <a href="#form" class="tariff-cta outline">Обрати</a>
         </div>
       </div>
     </div>
 
-    <!-- ОСНОВНИЙ -->
     <div class="tariff-row featured">
       <div class="tariff-inner">
         <div class="tariff-name-col">
@@ -1088,43 +789,43 @@
           <p class="tariff-name">Основний</p>
         </div>
         <div class="tariff-features-col">
-          <span class="tariff-feat bold-feat">Усі модулі у записі</span>
-          <span class="tariff-feat bold-feat">Чат підтримки з Юлією</span>
-          <span class="tariff-feat bold-feat">Групові зідзвони</span>
-          <span class="tariff-feat bold-feat">Офлайн-практика (Київ)</span>
-          <span class="tariff-feat bold-feat">База постачальників</span>
-          <span class="tariff-feat" style="color:rgba(250,247,242,0.45); font-size:12px;">Обмежено: 12 місць</span>
+          <span class="tariff-feat hi">10 модулів + бонус у записі</span>
+          <span class="tariff-feat hi">Чат підтримки з Юлією</span>
+          <span class="tariff-feat hi">Групові зідзвони</span>
+          <span class="tariff-feat hi">Офлайн-практика (Київ)</span>
+          <span class="tariff-feat hi">База постачальників</span>
+          <span class="tariff-feat" style="color:rgba(250,247,242,0.4);font-size:11px;">Обмежено: 12 місць</span>
         </div>
         <div class="tariff-price-col">
-          <p class="tariff-old">450€</p>
+          <p class="tariff-old">500€</p>
           <p class="tariff-new">299€</p>
           <a href="#form" class="tariff-cta">Записатись</a>
         </div>
       </div>
     </div>
 
-    <!-- VIP -->
     <div class="tariff-row">
       <div class="tariff-inner">
         <div class="tariff-name-col">
-          <span class="tariff-badge" style="color:var(--gold); background:rgba(184,154,106,0.15);">VIP · До 3 місць</span>
+          <span class="tariff-badge" style="color:var(--gold);background:rgba(184,154,106,0.15);">VIP · До 3 місць</span>
           <p class="tariff-name">VIP</p>
         </div>
         <div class="tariff-features-col">
           <span class="tariff-feat">Все з тарифу Основний</span>
-          <span class="tariff-feat bold-feat">1:1 відпрацювання з Юлією</span>
-          <span class="tariff-feat bold-feat">Персональний протокол</span>
-          <span class="tariff-feat bold-feat">Пріоритетна підтримка</span>
-          <span class="tariff-feat bold-feat">Розбір твоїх кейсів особисто</span>
+          <span class="tariff-feat hi">1:1 відпрацювання з Юлією</span>
+          <span class="tariff-feat hi">Персональний протокол</span>
+          <span class="tariff-feat hi">Пріоритетна підтримка</span>
+          <span class="tariff-feat hi">Розбір ваших кейсів особисто</span>
         </div>
         <div class="tariff-price-col">
-          <p class="tariff-old">950€</p>
+          <p class="tariff-old">1000€</p>
           <p class="tariff-new">699€</p>
           <a href="#form" class="tariff-cta outline">Обрати</a>
         </div>
       </div>
     </div>
 
+    <p class="tariff-support-note">На всіх тарифах є підтримка — ви не залишаєтесь наодинці з питаннями</p>
     <p class="tariff-deadline">⚡ Ціни зі знижкою діють до <strong>[дата дедлайну]</strong> · Після — повертаємось до стандартних цін</p>
   </div>
 </section>
@@ -1134,92 +835,77 @@
   <div class="container">
     <p class="section-label">Питання і відповіді</p>
     <h2 class="section-title">Головні сумніви</h2>
-
-    <div class="faq-list">
+    <div>
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">Немає медосвіти — чи можна навчатись? <span>+</span></div>
         <div class="faq-a"><div class="faq-a-inner">Так. Більшість успішних естетистів — без медичного диплому. Юлія сама починала як естетист і 5 років заробляла тільки на неін'єкційних процедурах. Курс повністю адаптований під роботу без медосвіти.</div></div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">Я майстер манікюру або шугарингу — підійде? <span>+</span></div>
-        <div class="faq-a"><div class="faq-a-inner">Саме для тебе цей формат. Ти вже розумієш б'юті-нішу і маєш навички роботи з клієнтом. Косметологія — наступний рівень і вищий чек. Деякі учениці поєднують обидві сфери.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Саме для вас цей формат. Ви вже розумієте б'юті-нішу і маєте навички роботи з клієнтом. Косметологія — наступний рівень і вищий чек. Деякі учениці поєднують обидві сфери.</div></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">Я живу за кордоном — чи підійде? <span>+</span></div>
-        <div class="faq-a"><div class="faq-a-inner">Так. Модулі 1–5 повністю онлайн. Офлайн-практика в Києві — для тарифу Основний — за домовленістю. Для VIP — індивідуально.</div></div>
+        <div class="faq-q" onclick="toggleFaq(this)">Я медичний працівник і хочу змінити напрямок — підійде? <span>+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Чудово підійде. Медична база — ваша конкурентна перевага. Ви засвоїте матеріал швидше і зможете відразу перейти до складніших методик, включаючи ін'єкційні.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Я живу за кордоном — чи підійде формат? <span>+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Так. Весь курс повністю онлайн. Офлайн-практика в Києві — для тарифу Основний — за домовленістю. Для VIP — індивідуально. Юлія також має досвід роботи в Польщі та Кіпрі.</div></div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">Чи буде живий зворотний зв'язок? <span>+</span></div>
-        <div class="faq-a"><div class="faq-a-inner">На тарифах Основний і VIP — так. Чат підтримки, групові зідзвони, особисті розбори. Юлія відповідає особисто — не бот і не асистент.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Підтримка є на всіх тарифах. На Основному і VIP — чат з Юлією, групові зідзвони, особисті розбори. Ви не залишаєтесь наодинці з питаннями — ні під час курсу, ні після.</div></div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">Скільки часу потрібно на навчання? <span>+</span></div>
-        <div class="faq-a"><div class="faq-a-inner">Рекомендований темп: 3–5 годин на тиждень. Матеріали доступні у записі — вивчаєш у зручний для тебе час, можна поєднувати з роботою.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Рекомендований темп: 3–5 годин на тиждень. Матеріали доступні у записі — вивчаєте у зручний для вас час. Можна поєднувати з роботою.</div></div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">А якщо не сподобається? <span>+</span></div>
-        <div class="faq-a"><div class="faq-a-inner">Повернення 100% після першого модуля — без зайвих питань. Ніяких умов і бюрократії.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Повернення 100% після першого модуля — без зайвих питань і бюрократії. Ми впевнені в якості — тому нам не страшно це гарантувати.</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── ФОРМА / CTA ── -->
+<!-- ── CTA ── -->
 <div class="cta-final" id="form">
-  <h2>Почни свій шлях<br>в косметологію</h2>
-  <p>Напиши нам в Direct або залиш заявку — і ми відповімо протягом 24 годин</p>
+  <h2>Почніть свій шлях<br>в косметологію</h2>
+  <p>Напишіть нам в Direct або залиште заявку — і ми відповімо протягом 24 годин</p>
   <a href="https://instagram.com/dr.lozytska_education" target="_blank" class="cta-big">Написати в Instagram</a>
   <span class="cta-ig">@dr.lozytska_education</span>
 </div>
 
-<!-- ── FOOTER ── -->
 <footer>
   <p>Юлія Лозицька · Лікар-косметолог · Викладач · 26+ років практики</p>
 </footer>
 
-<!-- ── STICKY BAR ── -->
 <div class="sticky-bar" id="sticky">
   <div class="sticky-text"><strong>Косметолог-Естетист з нуля</strong> · Знижки до [дата]</div>
   <a href="#tariffs" class="sticky-cta">Обрати тариф</a>
 </div>
 
 <script>
-  // accordion modules
   function toggleModule(header) {
     const body = header.nextElementSibling;
     const toggle = header.querySelector('.module-toggle');
     const isOpen = body.classList.contains('open');
-    // close all
     document.querySelectorAll('.module-body').forEach(b => b.classList.remove('open'));
     document.querySelectorAll('.module-toggle').forEach(t => { t.textContent = '+'; });
-    if (!isOpen) {
-      body.classList.add('open');
-      toggle.textContent = '×';
-    }
+    if (!isOpen) { body.classList.add('open'); toggle.textContent = '×'; }
   }
-
-  // faq accordion
   function toggleFaq(el) {
     const answer = el.nextElementSibling;
     const isOpen = answer.classList.contains('open');
     document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
     document.querySelectorAll('.faq-q').forEach(q => { q.classList.remove('open'); q.querySelector('span').textContent = '+'; });
-    if (!isOpen) {
-      answer.classList.add('open');
-      el.classList.add('open');
-      el.querySelector('span').textContent = '×';
-    }
+    if (!isOpen) { answer.classList.add('open'); el.classList.add('open'); el.querySelector('span').textContent = '×'; }
   }
-
-  // sticky bar
   const sticky = document.getElementById('sticky');
   const hero = document.querySelector('.hero');
   window.addEventListener('scroll', () => {
-    const heroBottom = hero.getBoundingClientRect().bottom;
-    sticky.classList.toggle('visible', heroBottom < 0);
+    sticky.classList.toggle('visible', hero.getBoundingClientRect().bottom < 0);
   }, { passive: true });
-
-  // open first module by default
   document.querySelector('.module-header').click();
 </script>
 </body>
